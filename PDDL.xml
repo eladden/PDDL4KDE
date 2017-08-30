@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "language.dtd">
 <!--
+  This file is part of KDE's kate project.
+  
   copyright   : (C) 2017 by Elad Denenberg
   email       : elad dot denenberg at kcl dot ac dot uk
 
@@ -8,7 +10,7 @@
  * This library is free software; you can redistribute it and/or      *
  * modify it under the terms of the GNU Library General Public        *
  * License as published by the Free Software Foundation; either       *
- * version 3 of the License, or (at your option) any later version.   *
+ * version 2 of the License, or (at your option) any later version.   *
  *                                                                    *
  * This library is distributed in the hope that it will be useful,    *
  * but WITHOUT ANY WARRANTY; without even the implied warranty of     *
@@ -23,16 +25,16 @@
  -->
 <language version="3" kateversion="5.0" name="PDDL2.1" section="Sources" extensions="*.pddl;*.PDDL" mimetype="" author="Elad Denenberg (elad.denenberg@kcl.ac.uk)" license="LGPLv2+">
   <highlighting>
-    <list name="symbols">
+    <list name="operator">
       <item> &lt; </item>
       <item> &lt;= </item>
       <item> = </item>
       <item> &gt; </item>
       <item> &gt;= </item>
-      <item> - </item> 
       <item> / </item> 
-      <item> * </item> 
       <item> + </item> 
+      <item> - </item> 
+      <item> * </item> 
       <item> #t </item> 
     </list>
 
@@ -52,7 +54,8 @@
       <item> :precondition </item> 
       <item> :effect </item>
       <item> :durative-action </item> 
-      <item> :process </item> 
+      <item> :process </item>
+      <item> :event </item>  
       <item> :duration </item> 
       <item> :condition </item> 
       <item> :domain </item> 
@@ -70,8 +73,11 @@
       <item> either </item> 
       <item> and </item> 
       <item> exists </item> 
-      <item> forall </item> 
-      <item> over&#160;all </item>
+      <item> forall </item>
+      <item> over </item>
+      <item> over&emsp;all </item>
+      <item> over&thinsp;all </item>
+      <item> over&ensp;all </item>
       <item> not </item> 
       <item> assign </item> 
       <item> scale-up </item> 
@@ -94,7 +100,7 @@
         <DetectChar attribute="Brackets" context="#stay" char="("/>
         <DetectChar attribute="Brackets" context="#stay" char=")"/>
         <keyword attribute="Keyword" context="#stay" String="keywords"/>
-        <keyword attribute="Operator" context="#stay" String="symbols"/>
+        <keyword attribute="Operator" context="#stay" String="operator"/>
         <keyword attribute="Modifier" context="#stay" String="modifiers"/>
         <keyword attribute="Variable" context="#stay" String="variables"/>
         <keyword attribute="Definition" context="function_decl" String="definitions"/>
